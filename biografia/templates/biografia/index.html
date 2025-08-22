@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Biografia{% endblock %}
+{% block content %}
+<div>
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3"> 
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Biografias WEB</h1>
+            <p class="col-md-8 fs-4">
+                Enconmtre as biografias mais interessantes e conheça a história de pessoas que marcaram época.
+            </p>
+            <a class="btn btn-primary btn-lg" href="{% url 'lista' %}" role="button">ir para lista de biografias</a>
+         </div>
+    </div>
+</div>
+{% endblock %}

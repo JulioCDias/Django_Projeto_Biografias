@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Biografias{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <div class="display-4">Lista de Biografias</div>
+        <p class="lead">Abaixo voçe encontra uma lista de biografias</p>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr class="alert-primary">
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data de Criação</th>
+                <th scope="col">Data de Atualização</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pessoa in pessoas %}
+                <tr>
+                    <th scope="row">{{ pessoa.id }}</th>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ pessoa.data_criação }}</td>
+                    <td>{{ pessoa.data_atualização }}</td>
+                    <td><a class="btn btn-primary" href="{% url 'detalhe' pessoa.id %}" role="button">Ler Biografia</a></td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+{% endblock %}
